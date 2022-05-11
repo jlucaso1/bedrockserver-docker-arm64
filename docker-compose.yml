@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  bedrock:
+    container_name: bedrock
+    image: bedrock
+    build: .
+    entrypoint: ["box64", "bedrock_server"]
+    ports:
+      - 19132:19132/udp
+    volumes:
+      - ./serverfiles:/home/bedrockserver/
+    #     - /home/node/app/node_modules
+    # restart: no-restart
